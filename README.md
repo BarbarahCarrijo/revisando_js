@@ -3,5 +3,5 @@ Exercícios básicos de JS para aprendizado, fixação e revisão de conceitos d
 
 # THE THRED
 
-## Variáveis e tipos de dados 
- 1. [Variáveis e tipos de dados](/1-Mod/variaveis_tipos_dados.md)
+1. [Variáveis e tipos de dados](/1-Mod/variaveis_tipos_dados.md)
+2. [Funções](/1-Mod/funcoes.md)
