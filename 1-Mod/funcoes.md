@@ -124,22 +124,132 @@ function triploDaSoma(num3, num4) {
 
 ### Fórmulas e funções
 
-Já vimos que podemos fazer cálculos matemáticos simples e de maior complexidade.
-
-Agora vamos para algo mais interessante.
-
+Já vimos que podemos fazer cálculos matemáticos simples e de maior complexidade. Agora vamos para algo mais interessante
 Queremos criar funções que nos permitam calcular a área e o perímetro de um círculo.
 
-Vamos criar uma função perimetro que nos diga o perímetro de um círculo quando damos a ele o raio como parâmetro.
+> Vamos criar uma função `perimetro` que nos diga o perímetro de um círculo quando damos a ele o raio como parâmetro. Também a função `area` que nos dá a área de um círculo quando recebe o `raio` como parâmetro. Lembre-se de usar o valor de 3.14 no lugar do π.
+> Aqui estão as fórmulas necessárias para as funções, além disso, para este exercício iremos considerar que o valor de π é 3.14. perimetro = π * raio * 2; area = π * raio * raio;
 
-Também a função area que nos dá a área de um círculo quando recebe o raio como parâmetro. 
+**Resposta**
 
-Lembre-se de usar o valor de 3.14 no lugar do π .
+~~~javascript
+var raio = 5;
+
+function perimetro (raio) {
+    return 3.14 * raio * 2
+}
+
+ function area (raio) {
+    return 3.14 * raio * raio
+}
+~~~
 
 ### Operando strings
 
-### Criando cartões
+E o que podemos fazer que não seja matemática? Podemos trabalhar com **strings**! E se você se recorda, as **strings** são um tipo de dados. Representamos as cadeias de texto escrevendo dentro de aspas (“ “) literalmente.
+
+E o que podemos fazer então com as strings? Por exemplo, podemos calcular quantos caracteres existem no total, e para isso iremos utilizar um recurso chamado length, onde colocamos a **string** seguida de `.length`. Veja alguns exemplos:
+
+~~~javascript
+"biblioteca".length // devolve 10
+"babel".length     // devolve 5
+~~~
+
+E lembre-se que também podemos somar **strings**! Embora que, o termo correto seja **concatenar**, ou seja, obter uma nova string juntando duas ou mais **strings**.
+
+~~~javascript
+"aa" + "bb"    // devolve "aabb"
+"aa" + " " + "bb" // devolve "aa bb"
+~~~
+
+> Vamos testar: Iremos criar uma função chamada `tamanhoNomeCompleto`, que recebe um `nome` e um `sobrenome` como parâmetros, e que irá devolver o tamanho total, contando um espaço extra para separar ambos:
+
+~~~javascript
+tamanhoNomeCompleto("Enzo", "Silva")
+//  devolve 10
+~~~
+
+> Não utilize nomes literais nos parâmetros da função, tente ser sempre o mais genérico possível. O método length fornece o comprimento de qualquer palavra em números, isto significa que você será capaz de fazer as contas com isso.
+
+**Resposta**
+
+~~~javascript
+var nome = "Barbara";
+var sobrenome = "Carrijo";
+
+function tamanhoNomeCompleto ( nome, sobrenome) {
+    nomeCompleto = nome + " " + sobrenome
+    return nomeCompleto.length
+}
+~~~
+
+> Para uma conferência importante, os organizadores nos pediram para escrever os cartões de identificação que cada participante terá. Para isso, temos que colocar seu nome, seu sobrenome e seu título (dr., dra., lic., etc) e montar uma única string.
+> Escreva a função `escreverCartao`, que recebe como parâmetros um `titulo`, um `nome` e um `sobrenome` e retorna uma única string como resultado. Por exemplo:
+
+~~~javascript
+escreverCartao("Dra.", "Ana", "Pérez")
+//"Dra. Ana Pérez"
+~~~
+
+> Lembre-se de não usar valores específicos ou literais nos parâmetros da função. Você também pode tentar concatenar espaços entre cada palavra.
+
+**Resposta**
+
+~~~javascript
+var titulo = "Dra.";
+var nome = "Ana";
+var sobrenome = "Pérez";
+
+function escreverCartao ( titulo,nome, sobrenome) {
+    cartao = titulo + " " + nome + " " + sobrenome
+    return cartao
+}
+~~~
 
 ### Conhecendo funções Math
 
-### Mais uma função
+Graças aos programadores de JavaScript, temos algumas funções que você pode usar sem declarar (porque eles fizeram isso por nós). Estas são algumas das funções matemáticas que podemos usar:
+
+> `Math.abs ()` retorna o valor absoluto do número que passamos para ele como *parâmetro*.
+
+~~~javascript
+Math.abs (4) //retorna 4
+Math.abs (0) //retorna 0
+Math.abs (-123) //retorna 123
+~~~
+
+>  `Math.round ()` arredonda um número para cima até o número inteiro mais próximo e `Math.floor ()` arredonda um número para baixo até o número inteiro mais próximo.
+
+~~~javascript
+Math.round (4.6) //retorna 5
+Math.round (4.3) //retorna 4
+Math.floor (4.6) //retorna 4
+Math.floor (4.3) //retorna 4
+~~~
+
+> `Math.max ()` pega dois parâmetros e retorna o maior número, enquanto `Math.min ()` pega dois parâmetros e retorna o menor.
+
+~~~javascript
+Math.max (4, 7) //retorna 7
+Math.min (4, 7) //retorna 4
+~~~
+
+Além das funções vistas no exercício anterior, existe uma função já definida em JavaScript que é muito importante: `Math.random ()`. Essa função gera um número **aleatório** decimal entre 0 e 1, e é a base para muitos cálculos usados na programação.
+
+~~~javascript
+Math.random()
+// exemplo de retorno 0.056
+
+Math.random()
+// exemplo de retorno 0.178
+~~~
+
+> Escreva uma função `gerarProbabilidade()`, que não recebe parâmetros e retorna a porcentagem de probabilidade de chuva, calculada aleatoriamente usando `Math.random ()`.
+
+**Resposta**
+
+~~~javascript
+function gerarProbabilidade () {
+    return Math.random ()
+}
+~~~
